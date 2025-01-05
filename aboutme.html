@@ -143,6 +143,7 @@
     </div>
 
     <script>
+        // Binary falling animation
         const canvas = document.getElementById('binaryCanvas');
         const ctx = canvas.getContext('2d');
 
@@ -153,7 +154,7 @@
         const fontSize = 16;
         let columns = Math.floor(canvas.width / (fontSize * 4));
         let drops = new Array(columns).fill(1);
-        const fallSpeed = 0.5;
+        const fallSpeed = 0.5; // Controlers the speed at which the 0s and 1s fall
 
         window.addEventListener('resize', () => {
             canvas.width = window.innerWidth;
@@ -163,6 +164,7 @@
         });
 
         function draw() {
+            // Animates the numbers falling
             ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
@@ -180,7 +182,7 @@
                 drops[i] += fallSpeed;
             }
         }
-
+        // Execute the draw function every 50ms
         setInterval(draw, 50);
     </script>
 </body>
