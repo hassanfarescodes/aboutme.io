@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: black;
+    color: rgb(255, 255, 255);
+    font-size: 40px;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.548), cyan, rgba(0, 0, 0, 0.548));
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 25px;
+    color: cyan;
+    text-shadow: 5px 5px 10px black;
+    font-weight: 600;
+}
+
+.home-content h1, h3 {
+  transform: translateY(300px);
+    text-shadow: 5px 4px 10px cyan;
+    margin-left: 100px;
+}
+.home-content h3 span {
+    color: cyan;
+}
+
+.home-img {
+    position: absolute; /* Ensures precise positioning */
+    right: 10%; /* Moves the image to the right */
+    top: 50%; /* Centers it vertically */
+    transform: translateY(-50%); /* Ensures perfect vertical centering */
+    width: 400px; /* Keep the same width as the image */
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-img::after {
+    content: "";
+    position: absolute;
+    top: -5%; /* Centers it vertically */
+    width: 110%; /* Matches the image */
+    height: 110%; /* Matches the image */
+    border-radius: 50%; /* Ensures it's circular */
+    background: rgba(0, 255, 255, 0.3);
+    filter: blur(20px); /* Soft glow effect */
+    z-index: -1; /* Keeps it behind the image */
+    animation: glowCircle 1.5s infinite alternate;
+    justify-content: flex-end;
+    padding-right: -900px; /* Keeps it positioned correctly */
+}
+@keyframes glowCircle {
+    0% {
+        opacity: 0.6;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+}
+
+.home-img img {
+    width: 400px; /* Adjust size as needed */
+    height: 400px; /* Ensure it's a square */
+    border-radius: 50%; /* Makes it a perfect circle */
+    object-fit: cover; /* Prevents distortion */
+    border: 4px solid cyan; /* Optional: Adds a red border */
+}
+.social-links {
+    display: flex;
+    gap: 20px; /* Adds space between icons */
+    justify-content: center;
+    margin-top: -100px;
+}
+
+.social {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    color: white;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social i {
+    font-size: 24px;
+}
+
+/* GitHub Button */
+.github {
+    background: #333;
+    border: 2px solid #333;
+}
+
+.github:hover {
+    background: #000;
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* LinkedIn Button */
+.linkedin {
+    background: #0077b5;
+    border: 2px solid #0077b5;
+}
+.linkedin:hover {
+    background: #005582;
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(0, 119, 181, 0.5);
+}
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -10;
+    background-color: black;
+}
+
